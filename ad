@@ -1,0 +1,17 @@
+[33mcommit 23d71e6bf2613b61f0c6d997afd1734009c1a06d[m[33m ([m[1;36mHEAD -> [m[1;32mSebastian[m[33m)[m
+Author: admin <reservagrupo5pio@gmail.com>
+Date:   Sun Sep 1 12:41:42 2024 -0500
+
+    import pickle
+
+[33mcommit 74061aa05829943d4896575ffa9b2527acd43411[m[33m ([m[1;31morigin/Sebastian[m[33m)[m
+Author: admin <reservagrupo5pio@gmail.com>
+Date:   Sun Sep 1 12:19:07 2024 -0500
+
+    funcion cagar sala y guardar sala binario
+
+[33mcommit d787483fce27a7e8b6efd35eb0dc560de0de52ae[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Sebastian <sebaszapata2022@gmail.com>
+Date:   Sat Aug 31 18:20:23 2024 -0500
+
+    frist commit / menu

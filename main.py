@@ -1,5 +1,23 @@
 '''Menú principal - Sala de cine'''
+
 import os
+import pickle 
+
+def cargar_sala(matrizsala):
+    for filas in (matrizsala):
+        for columnas in filas:
+            print(f"{columnas:>2}", end="  ")          #Correción del espaciado de la x   print(f"{columnas:>2}", end="  ") 
+        print() 
+    return matrizsala
+
+def guardar_matriz(name, matriz):
+    try:  # Log 
+        with open(name, 'wb') as file:
+            pickle.dump(matriz, file)
+        print(f'La matriz se ha guarado correctamente!.')
+    except Exception as e:
+        print(f'Error al guardar el matriz: ')
+
 def menu():
     '''Mostrar el menú'''
     while True:
