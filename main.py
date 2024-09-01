@@ -2,6 +2,7 @@
 
 import os
 import pickle 
+matriz_sala = []
 
 def clear_screen():
     os.system('cls')
@@ -16,6 +17,15 @@ def cre_sala(f, c):
             conta += 1
             matriz_sala[i].append(conta)
     return f, c, matriz_sala
+
+def pre_sala(matrizsala):
+    '''Función - previsualizar sala'''
+    for filas in (matrizsala):
+        for columnas in filas:
+            print(f"{columnas:>2}", end='  ')
+        print()
+    return matrizsala
+
 
 def cargar_sala(matrizsala):
     for filas in (matrizsala):
