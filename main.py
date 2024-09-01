@@ -3,6 +3,20 @@
 import os
 import pickle 
 
+def clear_screen():
+    os.system('cls')
+    os.system('clear')
+
+def cre_sala(f, c):
+    '''Función - crear sala'''
+    conta = 0
+    for i in range(f):
+        matriz_sala.append([])
+        for j in range(c):
+            conta += 1
+            matriz_sala[i].append(conta)
+    return f, c, matriz_sala
+
 def cargar_sala(matrizsala):
     for filas in (matrizsala):
         for columnas in filas:
@@ -20,24 +34,43 @@ def guardar_matriz(name, matriz):
 
 def menu():
     '''Mostrar el menú'''
-    while True:
-        os.system('cls')
-        os.system('clear')
+    clear_screen()
+    a = 0
+    while a == 0:
+        clear_screen()
         print("1 - CREAR SALA\n2 - VER SALA\n3 - ASIGNAR PUESTO\n4 - CARGAR SALA\n5 - SALIR")
-        opc = input('\nSeleccione la opción deseada:\n')
-        os.system('cls')
-        os.system('clear')
+        opc = int(input('\nSeleccione la opción deseada:\n'))
+        clear_screen()
 
-
-        if opc == "1":
-            print("Prueba opción 1")
-        elif opc == '2':
-            print("Prueba opción 2")
-        elif opc == '3':
-            print("Prueba opción 3")
-        elif opc == "4":
-            print("Prueba opción 4")
-        elif opc == "5":
-            print("Prueba opción 5")
+        if opc == 1:
+            filas = int(input('Digite el número de filas:\n'))
+            columnas = int(input('Digite el número de columnas:\n'))
+            cre_sala(filas, columnas)
+            print('Sala creada exitosamente.')
+            input('\nPresione una tecla para continuar...')
+        elif opc == 2:   
+            if len(matriz_sala) == 0:
+                print('La sala no ha sido creada aún.')
+            else:
+                pre_sala(matriz_sala)
+                input('\nPresione una tecla para continuar...')
+        elif opc == 3:
+            if len(matriz_sala) == 0:
+                print('La sala no ha sido creada aún.')
+            else: 
+                asig_asiento(matriz_sala)
+                input('\nPresione una tecla para continuar...'); 
+        
+        elif opc ==  4: 
+            if len(matriz_sala) == 0:
+                print('La sala no ha sido creada aún.')
+            else:
+                clear_screen()
+                cargar_sala(matriz_sala)
+                guardar_matriz("Log", matriz_sala)
+                input('\nPresione una tecla para continuar...'); 
+        elif opc == 5:
+            clear_screen()
+            a += 1
 menu()
 
