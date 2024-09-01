@@ -26,6 +26,24 @@ def pre_sala(matrizsala):
         print()
     return matrizsala
 
+def asig_asiento(asig):
+    '''Función - seleccionar asiento'''
+    try:
+        num_asiento = int(input('Digite el número del asiento seleccionado: '))
+        enc = False
+        for i, fila in enumerate(matriz_sala):
+            for j, asiento in enumerate(matriz_sala[i]):
+                if matriz_sala[i][j] == num_asiento:
+                    matriz_sala[i][j] = 'x'
+                    enc = True
+                    print('Asiento asignado correctamente.')
+                    break
+            if enc:
+                break
+        if not enc:
+            print('El asiento no es valido o está ocupado.')
+    except ValueError:
+        print('Error, ingrese un número válido.')
 
 def cargar_sala(matrizsala):
     for filas in (matrizsala):
