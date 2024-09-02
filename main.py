@@ -53,12 +53,21 @@ def cargar_sala(matrizsala):
     return matrizsala
 
 def guardar_matriz(name, matriz):
-    try:  # Log 
+    try:
         with open(name, 'wb') as file:
             pickle.dump(matriz, file)
-        print(f'La matriz se ha guarado correctamente!.')
+        print('¡La matriz se ha guardado correctamente!')
     except Exception as e:
-        print(f'Error al guardar el matriz: ')
+        print(f'Error al guardar la matriz: {e}')
+
+def cargar_matriz(name):
+    try:
+        with open(name, 'rb') as file:
+            sala = pickle.load(file)
+        return sala
+    except Exception as e:
+        print(f'Error al cargar la matriz: {e}')
+        return None
 
 def menu():
     '''Mostrar el menú'''
@@ -94,8 +103,15 @@ def menu():
                 print('La sala no ha sido creada aún.')
             else:
                 clear_screen()
-                cargar_sala(matriz_sala)
-                guardar_matriz("Log", matriz_sala)
+                print('1. CARGAR SALA \n2. GUARDAR SALA \n3. DESCIFRAR SALA')
+                i = int(input('Que desea hacer?: ')); 
+                if(i == 1):
+                    cargar_sala(matriz_sala)
+                elif(i == 2):
+                    guardar_matriz("Log", matriz_sala)
+                elif(i==3):
+                    print(cargar_matriz("Log"))
+
                 input('\nPresione una tecla para continuar...'); 
         elif opc == 5:
             clear_screen()
